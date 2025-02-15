@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script>
+        //Doi tuong date de lam viec thoi gian: ngay, gio, phut, nam, thang
+        //khoi tao doi tuong
+        var date = new Date(); // Tra ve thoi gian hien tai
+        console.log(date);
+        let thu = date.getDay();
+        let ngay = date.getDate();
+        let thang = date.getMonth();
+        let nam = date.getFullYear();
+        let gio = date.getHours();
+        let phut = date.getMinutes();
+        let giay = date.getSeconds();
+        document.write("<p>Bay gio la:"+ gio + ":" + phut + ":" + giay + "</p>")
+        ngay = " ngay " + ngay;
+        thang = " thang " + thang;
+        nam = " nam " + nam;
+        if(thu == 0) thu = "Chu nhat";
+        if(thu == 1) thu = "Thu 2";
+        if(thu == 2) thu = "Thu 3";
+        if(thu == 3) thu = "Thu 4";
+        if(thu == 4) thu = "Thu 5";
+        if(thu == 5) thu = "Thu 6";
+        if(thu == 6) thu = "Thu 7";
+        document.write("<p>Hom nay la: " + thu + "," + ngay + thang + nam);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

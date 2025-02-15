@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 90%;
+            margin: 10px auto;
+        }
+        .container h2{
+            text-align: center;
+            margin: 15px 0;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th{
+            background-color: #f4f4f4;
+        }
+        .btn-delete{
+            background-color: #DC4C64;
+            border: 1px solid #DC4C64;
+            padding: 5px 8px;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .btn-delete:hover{
+            background-color: red;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sach bai viet</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="result">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        //url cua API 
+        const url = 'https://jsonplaceholder.typicode.com/posts';
+        //ham doc du lieu tu API
+    function fetchPost() {
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Lỗi: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(post => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${post.id}</td>
+                    <td>${post.title}</td>
+                    <td>${post.body}</td>
+                    <td><button class="btn-delete">Delete</button></td>
+                `;
+                document.getElementById("result").appendChild(tr);
+
+                tr.querySelector(".btn-delete").addEventListener('click', () => {
+                    if (confirm(`Bạn có đồng ý xóa ${post.id}?`)) {
+                        fetch(`${url}/${post.id}`, { method: 'DELETE' })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error("Lỗi xóa: " + response.statusText);
+                                }
+                                tr.remove(); // Hoặc tr.parentNode.removeChild(tr);
+                                console.log(`Đã xóa bài viết ${post.id}`);
+                            })
+                            .catch(error => console.error(error));
+                    }
+                });
+            });
+        })
+        .catch(error => console.error("Error:" + error));
+    }
+    //Gọi hàm
+    fetchPost();
+    </script>
+</body>
+</html>

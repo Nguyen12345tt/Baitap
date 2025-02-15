@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+        //1. Khai bao string
+        //1.1. Khai bao nguyen thuy
+        let str1 = "CNTT 18-09";
+        let str2 = "CNTT 18-09";
+        //1.2. Khai bao kieu doi tuong
+        let str3 = new String("CNTT 18-09");
+        //2. Cac thuong tinh cua len
+        //Thuoc tinh len tra ve do dai cua chuoi
+        console.log(str1.length);//10
+        //3.1. Cac phuong thuc cua trim
+        //trim() chuan hoa chuoi: loai bo khoang chong o dau va cuoi
+        {
+            let str = "     CNTT 18-09      "
+            console.log(str.trim());
+        }
+        //3.2. toLowerCase(): chuyen chuoi thanh chu thuong
+        {
+            let str = "XIN CHAO CAC BAN"
+            console.log(str.toLocaleLowerCase());//xin chao cac ban
+        }
+        //3.3. toUpperCase(): chuyen chuoi thanh chu hoa
+        {
+            let str = "viet nam"
+            console.log(str.toUpperCase());//VIET NAM
+        }
+        //3.4. search(): Tim kiem
+        let str = "CNTT 18-09"
+        console.log(str.search(1));//5
+        //3.5. replace(): Tim kiem va thay the
+        {
+            let str = "CNTT 18-07";
+            console.log(str.replace("7", "9"));//9
+        }
+        //3.6. split(): Tach chuoi thanh mang cac chuoi con
+        {
+            let str = "CNTT-KHMT-HTTT";
+            console.log(str.split("-"));
+        }
+        //3.7. substr(): Tach chuoi tu vi tri index
+        {
+            let str = "Xin chao CNTT 18-09";
+            console.log(str.substr(9));
+        }
+        //3.8. substring(start, end): Tach chuoi tu start den end
+        //      [start, end]
+        {
+            let str = "Hello world";
+            console.log(str.substring(0, 5));
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

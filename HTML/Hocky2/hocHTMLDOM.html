@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p>Hoc HTML DOM</p>
+    <p class="text">Lorem, ipsum dolor.</p>
+    <p id="para">CNTT 18-09</p>
+    <script>
+        //Moi mot the HTML se la mot doi tuong
+        //Co 3 cach de lay ra phan tu HTML
+        //1. Lay bang ten the
+        let elements = document.getElementsByTagName("p");
+        console.log(elements[0]);
+        //Chu y: Lay theo ten se tra ve mang cac phan tu
+        //Su dung thuoc tinh textContent de thay doi noi dung cua the
+        elements[0].textContent = "new text Content";
+        //2. Lay bang ten class
+        {
+            let elements = document.getElementsByClassName("text");
+            console.log(elements);
+            //Thay doi noi dung ben trong HTML
+            elements[0].innerHTML = "Hello world!"
+        }
+        //3. Lay bang id
+        {
+            let elements = document.getElementById("para");
+            console.log(elements);
+        }
+    </script>
+</body>
+</html>

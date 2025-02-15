@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6+</title>
+</head>
+<body>
+    <script>
+        //ES6(ECMAScript 2015): Là 1 phiên bản nâng cao của JavaScript
+        //1. Spread syntax(...): Là 1 cú pháp dùng để hợp nhất các mẳng hoặc các
+        //object
+        // let name1 = ["Dũng", "Nam", "Tuấn"];
+        // let name2 = ["Lan", "Mai"];
+        // let name3 = [...name1,...name2];//["Dũng", "Nam", "Tuấn","Lan", "Mai"]
+        // console.log(name3);
+        // let name4 = [...name1,"Hiền", "Hùng"];
+
+        // let student1 = {
+        //     id: 1,
+        //     name: 'Lê Văn A'
+        // }
+        // let student2 = {
+        //     ...student1,
+        //     phone: '0912345678',
+        //     address: 'Hà Nội'
+        // }
+        // console.log(student2);
+
+        /*2.Destructuring - phân rã: là cách truy cập tới các phần tử của mảng hoặc
+        thuộc tính của object mà không cần truy cập thông qua tên mảng hoặc tên
+        object*/
+        // let cars = ["Vinfast","Kia","Hyundai","Volvo", "Toyota"];
+        // console.log(cars[2]);//Hyundai
+        // let [a,b,c,d,e ] = cars;
+        // console.log(b);//Kia
+
+        // let customer={
+        //     fullname:'Lê Trung Hiếu',
+        //     address:'Hà Nội',
+        //     phone:'0912345678'
+        // }
+        // console.log(customer.fullname);
+        // let{fullname,address,phone} = customer;
+        // console.log(fullname);
+        
+        //3.Rest parameter: Tham số còn lại
+        function tinhTong(a,b,...othernumber){
+            let sum = a + b;
+            for(let i = 0; i < othernumber.length;i++){
+                sum += othernumber[i];
+            }
+            return sum;
+        }
+        //gọi hàm
+        console.log(tinhTong(3,4));
+        console.log(tinhTong(1,5,6));
+        console.log(tinhTong(3,6,1,8));
+    </script>
+    
+</body>
+</html>

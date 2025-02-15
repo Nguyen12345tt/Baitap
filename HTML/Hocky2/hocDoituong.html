@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>Object</script>
+    <script>
+        //Mot doi tuong trong thuc te luon luon co hai thanh phan
+        //- Thuoc tinh  (properties)
+        //- Phuong thuc (Methods) chinh la cac ham (Function)
+        //1. Khoi tao doi tuong
+        //VD: Doi tuong sinh vien
+        //- Thuoc tinh: ten, tuoi, que quan, ma sinh vien, gioi tinh, tien
+        //- Phuong thuc: ngheo, ngu, noi chuyen
+        var student = {
+            masinhvien: "178101665",
+            Hoten: "Tran Xuan Hung",
+            tuoi: 18,
+            gioitinh: "Nam",
+            soTien: 100000000,
+            diNgu: function(){
+                console.log(this.Hoten + " di ngu luc 2 gio sang");
+            },
+            isNgheo: function(){
+                var result = this.soTien > 100000000 ? " giau" : " ngheo";
+                console.log(this.Hoten + result);
+            }
+        }
+        //2. Su dung
+        //Truy cap den cac thuoc tinh hoac goi cac phuong thuc chung ta se co hai cach
+        //Cach 1: Su dung dau '.' de truy cap den thuoc tinh
+        console.log(student.Hoten);
+        console.log(student.masinhvien);
+        //Cach 2: Truyen ten thuoc tinh
+        console.log(student['Hoten']);
+        console.log(student['masinhvien']);
+        //Goi phuong thuc su dung dau cham.
+        student.diNgu();
+        student.isNgheo();
+        //Thay doi thuoc tinh
+        student.soTien=0;
+        student.isNgheo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
