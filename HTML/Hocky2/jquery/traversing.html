@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li class="my-list">Product</li>
+        <li>About</li>
+    </ul>
+    <button id="btn1">Lấy phần tử con trực tiếp</button>
+    <button id="btn2">Lấy các phần tử hậu duệ</button>
+    <button id="btn3">Lấy ra phần tử cha</button>
+    <button id="btn4">Lấy ra các phần tử anh em</button>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert($("#menu").children().text());
+            });
+            $("#btn2").click(function(){
+                alert($("#menu").find(".my-llist").text());
+            });
+            $("#btn3").click(function(){
+                alert($(".my-list").parent().attr("id"));
+            });
+            $("#btn4").click(function(){
+                alert($(".my-list").siblings().text());
+            });
+        });
+    </script>
+</body>
+</html>

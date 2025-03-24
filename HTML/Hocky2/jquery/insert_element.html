@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>Item (Default)</li>
+    </ul>
+    <button id="btn1">Append</button>
+    <button id="btn2">Prepend</button>
+    <button id="btn3">Before</button>
+    <button id="btn4">After</button>
+    <button id="btn5">AppendTo</button>
+    <button id="btn6">PrependTo</button>
+    <button id="btn7">Remove</button>
+    <button id="btn8">Empty</button>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //append():Thêm phần tử vào cuối danh sách
+                $("#list").append("<li>Phạm Duy Anh</li>");
+            });
+            $("#btn2").click(function(){
+                //prepend():Thêm phần tử vào đầu danh sách
+                $("#list").prepend("<li>Phạm Duy Anh</li>");
+            });
+            $("#btn3").click(function(){
+                $("#list").before("<li>Trước #list</li>");
+            });
+            $("#btn4").click(function(){
+                $("#list").after("<li>Sau #list</li>");
+            });
+            $("#btn5").click(function(){
+                $("<li>Phạm Duy Anh</li>").appendTo("#list");
+            });
+            $("#btn6").click(function(){
+                $("<li>Phạm Duy Anh</li>").prependTo("#list");
+            });
+            $("#btn7").click(function(){
+                //Xóa selector khỏi trang web
+                //Cú pháp: $("selector").remove()
+                $("li").remove();
+            });
+            $("#btn8").click(function(){
+                //Làm rỗng nội dung bên trong selector
+                $("li").empty();
+            });
+        });
+    </script>
+</body>
+</html>

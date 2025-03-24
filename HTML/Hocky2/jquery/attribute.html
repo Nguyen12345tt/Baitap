@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="dai-nam-11.png" width="300" alt="logo-dnu">
+    </div>
+    <button id = "btn1">Get Attribute</button>
+    <button id = "btn2">Get Attribute</button>
+    <button id = "btn3">Remove Attribute</button>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //attr("attributeName"): Lấy ra thuộc tính của selector
+                //Cú pháp: $("selector").attr("attributeName")
+                alert($("img").attr("width"));
+            });
+            $("#btn2").click(function(){
+                //Gán giá trị cho thuộc tính
+                //Cú pháp: $("selector").attr("attributeName","value");
+                $("img").attr("width", "500px");
+            });
+            $("#btn3").click(function(){
+                //Xóa attribute
+                //Cú pháp: $("selector").removeAttr("attributeName");
+                $("img").removeAttr("src");
+            });
+        });
+    </script>
+</body>
+</html>

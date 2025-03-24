@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Each Method</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Danh sách điểm sinh viên</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bùi Đức Anh</td>
+                <td class="diem">9</td>
+            </tr>
+            <tr>
+                <td>Phạm Duy Anh</td>
+                <td class="diem">3</td>
+            </tr>
+            <tr>
+                <td>Nguyễn Mạnh Cường</td>
+                <td class="diem">4</td>
+            </tr>
+            <tr>
+                <td>Thái Văn Hùng</td>
+                <td class="diem">7</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function(){
+            //Hàm each dùng để lặp qua mỗi phần tử của selector
+            //Cú pháp: $(selector).each(function{});
+            $(".diem").each(function(){
+                //Lấy ra điểm để so sánh
+                if($(this).text()>5){
+                    //In đậm phần tử dùng CSS
+                    $(this).parent().css("font-weight","bold");
+                    $(this).parent().css("color","red");
+                }            
+            })
+        })
+    </script>
+</body>
+</html>
