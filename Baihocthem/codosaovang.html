@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ đỏ sao vàng</title>
+    <style>
+        .flag{
+            position: absolute;
+            width: 525px;
+            height: 320px;
+            background-color: #da251d;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+        }
+        .flag-segment {
+            position: absolute;
+            width: 5px; /* Chiều rộng của mỗi cột nhỏ */
+            height: 320px;
+            background-color: #da251d;
+        }
+        .star{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #feda02;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="flag" id="flag">
+        <div class="star"></div>
+    </div>
+
+    <script src="animation1.js"></script>
+</body>
+</html>
