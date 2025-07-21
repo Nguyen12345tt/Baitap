@@ -1,7 +1,3 @@
-//Trịnh Anh Tuấn
-//Mã sinh viên:1871020635
-//Lớp: CNTT 18-09
-
 #include <iostream>
 using namespace std;
 int main() {
