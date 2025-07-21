@@ -1,11 +1,8 @@
-//Trịnh Anh Tuấn
-//Mã sinh viên:1871020635
-//Lớp: CNTT 18-09
-
 #include <iostream>
 using namespace std;
 int main()
 {
+    // 
     int gallons = 20;
     float so_dam_tren_thanh_pho = 23.5f;
     float so_dam_tren_duong_cao_toc = 28.9f;
