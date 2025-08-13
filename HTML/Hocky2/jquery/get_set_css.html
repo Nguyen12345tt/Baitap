@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get/Set CSS</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .block{
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(8,25,131,1) 40%, rgba(7,37,139,1) 44%, rgba(6,59,154,1) 51%, rgba(5,78,166,1) 57%, rgba(170,113,5,1) 59%, rgba(0,212,255,1) 100%);
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="block"></div>
+    <button id="btn1">Get CSS</button>
+    <button id="btn2">Set CSS</button>
+    <button id="btn3">Has Class</button>
+    <button id="btn4">Add Class</button>
+    <button id="btn5">Remove Class</button>
+    <button id="btn6">Toggle Class</button>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //Lấy ra width của .block
+                //Cú pháp: $("selector").css("propertyName");
+                alert($(".block").css("width"));
+            });
+            $("#btn2").click(function(){
+                //Set CSS
+                //Cú pháp: $("selector").css("propertyName" , "value");
+                $(".block").css("border-radius", "50%")
+            });
+            $("#btn3").click(function(){
+                //Kiểm tra selector có class className hay chưa?
+                //Trả về true/false
+                //Cú pháp: $("selector").hasClass("className");
+                alert($(".block").hasClass("block"));
+            });
+        });
+    </script>
+</body>
+</html>

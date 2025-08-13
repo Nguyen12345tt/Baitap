@@ -1,0 +1,47 @@
+[
+    {
+        "nam": 2024,
+        "thang": 3,
+        "ten_khach_hang": "123",
+        "chi_so_dau_dien": 2,
+        "chi_so_cuoi_dien": 4,
+        "so_kw_dien": 2,
+        "tien_dien": 3456,
+        "chi_so_dau_nuoc": 1,
+        "chi_so_cuoi_nuoc": 3,
+        "so_m3_nuoc": 2,
+        "tien_nuoc": 11946,
+        "tong_tien": 15402,
+        "da_thanh_toan": false
+    },
+    {
+        "nam": 2025,
+        "thang": 3,
+        "ten_khach_hang": "MacOS",
+        "chi_so_dau_dien": 4,
+        "chi_so_cuoi_dien": 6,
+        "so_kw_dien": 2,
+        "tien_dien": 3456,
+        "chi_so_dau_nuoc": 3,
+        "chi_so_cuoi_nuoc": 5,
+        "so_m3_nuoc": 2,
+        "tien_nuoc": 11946,
+        "tong_tien": 15402,
+        "da_thanh_toan": false
+    },
+    {
+        "nam": 2024,
+        "thang": 4,
+        "ten_khach_hang": "MacOS",
+        "chi_so_dau_dien": 6,
+        "chi_so_cuoi_dien": 7,
+        "so_kw_dien": 1,
+        "tien_dien": 1728,
+        "chi_so_dau_nuoc": 5,
+        "chi_so_cuoi_nuoc": 8,
+        "so_m3_nuoc": 3,
+        "tien_nuoc": 17919,
+        "tong_tien": 19647,
+        "da_thanh_toan": false
+    }
+]

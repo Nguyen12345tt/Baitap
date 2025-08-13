@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng ký thành viên</h2>
+        <form action="" onsubmit="return validateForm();">
+            <div>
+                <label for="">Họ tên</label>
+                <input type="text" name="fullname" id="fullname">
+                <span id="errorFullname" style="color: red;"></span>
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="text" name="email" id="email">
+                <span id="errorEmail" style="color: red;"></span>
+            </div>
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="username" id="username">
+                <span id="errorUsername" style="color: red;"></span>
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="text" name="password" id="password">
+                <span id="errorPassword" style="color: red;"></span>
+            </div>
+            <div>
+                <button type="submit">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            // Lấy dữ liệu nhập từ các trường trong form
+            let fullname = document.getElementById("fullname").value;
+            let email = document.getElementById("email").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Kiểm tra họ tên
+            if (fullname.length < 5) {
+                document.getElementById("errorFullname").innerText = "Họ tên tối thiểu 5 ký tự!";
+                isValid = false;
+            } else {
+                document.getElementById("errorFullname").innerText = "";
+            }
+
+            // Kiểm tra email
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexEmail.test(email)) {
+                document.getElementById("errorEmail").innerText = "Email không hợp lệ!";
+                isValid = false;
+            } else {
+                document.getElementById("errorEmail").innerText = "";
+            }
+
+            // Kiểm tra tên đăng nhập
+            if (username.length < 5 || username.includes(' ')) {
+                document.getElementById("errorUsername").innerText = "Tên đăng nhập phải có ít nhất 5 ký tự và không chứa khoảng trắng!";
+                isValid = false;
+            } else {
+                document.getElementById("errorUsername").innerText = "";
+            }
+
+            // Kiểm tra mật khẩu
+            const regexPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+            if (!regexPassword.test(password)) {
+                document.getElementById("errorPassword").innerText = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ số và ký tự đặc biệt!";
+                isValid = false;
+            } else {
+                document.getElementById("errorPassword").innerText = "";
+            }
+
+            return isValid; // Trả về kết quả kiểm tra hợp lệ
+        }
+    </script>
+</body>
+</html>
