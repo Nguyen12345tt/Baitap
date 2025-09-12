@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mừng Quốc Khánh 2/9</title>
+    <!-- Thêm thư viện GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        :root {
+            --sky-color: #87CEEB;
+            --mausoleum-roof: #7d7d7d;
+            --mausoleum-roof-dark: #6b6b6b;
+            --mausoleum-body: #c2c2c2;
+            --mausoleum-body-border: #a0a0a0;
+            --mausoleum-base: #a9a9a9;
+            --mausoleum-base-dark: #888;
+            --text-color: #8B0000;
+            --plaza-color: #dcdcdc;
+            --flag-red: #da251d;
+            --star-yellow: #feda02;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, var(--sky-color) 70%, var(--plaza-color) 30%);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .scene {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .mausoleum {
+            position: relative;
+            width: 300px;
+            height: 180px;
+            z-index: 2;
+        }
+
+        .roof {
+            position: absolute;
+            bottom: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 50px;
+            background-color: var(--mausoleum-roof);
+            border-top: 10px solid var(--mausoleum-roof-dark);
+        }
+
+        .main-body {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 100px;
+            background-color: var(--mausoleum-body);
+            border: 5px solid var(--mausoleum-body-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Times New Roman', serif;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 14px;
+            padding-top: 5px;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+
+        .column {
+            width: 12px;
+            height: 100%;
+            background-color: #b0b0b0;
+            border-left: 2px solid #a0a0a0;
+            border-right: 2px solid #a0a0a0;
+        }
+
+        .base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 360px;
+            height: 30px;
+            background-color: var(--mausoleum-base);
+            border-bottom: 5px solid var(--mausoleum-base-dark);
+        }
+
+        .flag-pole {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 120px;
+            background-color: #c0c0c0;
+            z-index: 10;
+        }
+
+        .flag {
+            position: absolute;
+            top: 0;
+            left: 3px;
+            width: 90px;
+            height: 60px;
+            background-color: var(--flag-red);
+            z-index: 11;
+            transform-origin: 0 0;
+            animation: wave 3s infinite ease-in-out;
+        }
+
+        .star {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background-color: var(--star-yellow);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .title {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--flag-red);
+            text-shadow: 3px 3px 5px white;
+            z-index: 1;
+        }
+
+        .person {
+            position: absolute;
+            width: 15px;
+            height: 40px;
+            z-index: 3;
+        }
+
+        .person .head {
+            width: 15px;
+            height: 15px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        .person .body {
+            width: 15px;
+            height: 25px;
+            background-color: #333;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-3deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nhạc nền -->
+    <audio autoplay loop>
+        <source src="https://www.nhaccuatui.com/bai-hat/tien-quan-ca-v-a.g8a9y1j1p5.html" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát âm thanh.
+    </audio>
+
+    <div class="scene">
+        <h1 class="title">Mừng Quốc Khánh 2-9</h1>
+        <div id="clouds"></div>
+        <div class="mausoleum">
+            <div class="roof"></div>
+            <div class="main-body">
+                CHỦ TỊCH HỒ CHÍ MINH
+                <div class="columns">
+                    <div class="column"></div><div class="column"></div><div class="column"></div>
+                    <div class="column"></div><div class="column"></div><div class="column"></div>
+                </div>
+            </div>
+            <div class="base"></div>
+            <div class="flag-pole">
+                <div class="flag"><div class="star"></div></div>
+            </div>
+        </div>
+        <div id="visitors"></div>
+    </div>
+
+    <script>
+        const visitorsContainer = document.getElementById('visitors');
+        const cloudsContainer = document.getElementById('clouds');
+        const scene = document.querySelector('.scene');
+
+        // 1. TẠO DÒNG NGƯỜI VÀO LĂNG BẰNG GSAP
+        const numberOfVisitors = 20;
+        for (let i = 0; i < numberOfVisitors; i++) {
+            const person = document.createElement('div');
+            person.className = 'person';
+            person.innerHTML = `<div class="head"></div><div class="body"></div>`;
+            visitorsContainer.appendChild(person);
+
+            const duration = gsap.utils.random(15, 25);
+            const delay = gsap.utils.random(0, 15);
+            const yPos = gsap.utils.random(10, 40);
+
+            // Thiết lập vị trí ban đầu và animation với GSAP
+            gsap.set(person, { bottom: yPos, x: 450, scale: 0.8 });
+            gsap.to(person, {
+                x: -450,
+                scale: 0.8,
+                duration: duration,
+                delay: delay,
+                repeat: -1,
+                ease: "none",
+                // Thêm hiệu ứng đi bộ đơn giản
+                onUpdate: function() {
+                    if (Math.floor(this.progress() * 10) % 2 === 0) {
+                        gsap.set(person, { y: yPos - 2 });
+                    } else {
+                        gsap.set(person, { y: yPos });
+                    }
+                }
+            });
+        }
+
+        // 2. TẠO MÂY BAY TRÊN BẦU TRỜI
+        const numberOfClouds = 5;
+        for (let i = 0; i < numberOfClouds; i++) {
+            const cloud = document.createElement('div');
+            cloud.className = 'cloud';
+            cloudsContainer.appendChild(cloud);
+
+            const size = gsap.utils.random(50, 150);
+            const startY = gsap.utils.random(50, 150);
+            const startX = gsap.utils.random(-200, scene.offsetWidth + 200);
+
+            gsap.set(cloud, { width: size, height: size, top: startY, x: startX });
+            gsap.to(cloud, {
+                x: '+=1000', // Di chuyển sang phải
+                duration: gsap.utils.random(60, 120),
+                repeat: -1,
+                ease: "none",
+                modifiers: {
+                    x: x => (parseFloat(x) % (scene.offsetWidth + 400)) - 200 // Lặp lại khi ra khỏi màn hình
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

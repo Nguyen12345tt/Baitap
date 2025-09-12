@@ -1,6 +1,0 @@
-str = 'Pháp HLV Mikel Arteta cho rằng thủ môn Gianluigi Donnarumma, với những pha cứu thua xuất sắc, đã quyết định kết cục trận lượt về bán kết Champions League."Xin chúc mừng PSG, nhưng tôi tự hào về Arsenal. Sau 20 phút, tỷ số lẽ ra phải là 3-0 cho chúng tôi", HLV Arteta nói sau trận thua 1-2 trên sân Parc des Princes tối 7/5. "Cầu thủ chơi tốt nhất bên phía PSG sau hai trận là thủ môn. Vấn đề nằm ở chi tiết và hiệu quả trong các lĩnh vực khác nhau. Hôm nay, chúng tôi chơi hay hơn và xứng đáng có được nhiều hơn".Trận này, Arsenal khởi đầu mạnh mẽ. Ngay phút thứ 3, Declan Rice bật cao đánh đầu chệch cột gang tấc. Một phút sau đó, Gabriel Martinelli bỏ lỡ một cơ hội khác khi đệm bóng từ khoảng 4 mét trúng Donnarumma. Đến phút thứ 8, thủ môn người Italy đổ người xuất thần, đẩy cú vô lê căng của Martin Odegaard nhằm vào góc gần.'
-dem = 0
-for i in range (0, len(str) - 6):
-    if (str[i] == 'A' and str[i+1] == 'r' and str [i+2] == 'k' and str[i + 3] == 'e' and str[i+4]== 't' and str [ i+5 ]=='a'):
-        dem += 1
-print ("so luong arketa" , dem)
