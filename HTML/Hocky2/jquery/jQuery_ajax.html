@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery ajax</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sách sinh viên</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody id="content">
+                <!--Dữ liệu call từ API sẽ được thêm vào đây-->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            loadData();
+        });
+        //Hàm lấy dữ liệu từ API
+        function loadData(){
+            $.ajax({
+                url: 'https://67be8b50b2320ee05010771f.mockapi.io/api/v1/Students',
+                type:"GET",
+                dataType:'json',
+                success: function(response){
+                    let row ='';
+                    let i = 1;
+                    $.each(response,(index,value)=>{
+                        row +='<tr>';
+                        row +='<td>'+i+'<td>';
+                        row +='<td>'+value.fullname+'<td>';
+                        row +='<td>'+value.email+'<td>';
+                        row +='<td>'+value.address+'<td>';
+                        row +='<td><button onclick="deleteStudent('+value.id+')">Xóa</button> </td';
+                        row += '</tr>';
+                        i++;
+                    });
+                    $("#content").html(row);
+                }
+            });
+        }
+
+        //hàm xóa sinh viên
+        function deleteStudent(id){
+            if(confirm('Bạn có đồng ý xóa' + id)){
+                $.ajax({
+                    url: 'https://67be8b50b2320ee05010771f.mockapi.io/api/v1/Students/'+ id,
+                    type: 'DELETE',
+                    success: function(response){
+                        loadData();//Tải lại dữ liệu
+                    },
+                    error: function(e){
+                        console.log("Lỗi trong khi xóa");
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+BÁO CÁO CHI TIẾT HÓA ĐƠN ĐIỆN NƯỚC
+========================================
+
+--- Hóa đơn số 1 ---
+Năm: 2024, Tháng: 3, Khách hàng: 123
+    Điện:
+      Chỉ số đầu: 2, Chỉ số cuối: 4
+      Số kWh tiêu thụ: 2, Thành tiền: 3,456 VNĐ
+    Nước:
+      Chỉ số đầu: 1, Chỉ số cuối: 3
+      Số m³ tiêu thụ: 2, Thành tiền: 11,946 VNĐ
+    Tổng tiền: 15,402 VNĐ
+    Trạng thái thanh toán: Chưa thanh toán
+--------------------
+--- Hóa đơn số 2 ---
+Năm: 2025, Tháng: 3, Khách hàng: MacOS
+    Điện:
+      Chỉ số đầu: 4, Chỉ số cuối: 6
+      Số kWh tiêu thụ: 2, Thành tiền: 3,456 VNĐ
+    Nước:
+      Chỉ số đầu: 3, Chỉ số cuối: 5
+      Số m³ tiêu thụ: 2, Thành tiền: 11,946 VNĐ
+    Tổng tiền: 15,402 VNĐ
+    Trạng thái thanh toán: Chưa thanh toán
+--------------------
+
+========================================
+Kết thúc báo cáo.

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get / Set Content Element</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div>
+        <input type="text">
+    </div>
+    <button id="btn1">Get html</button>
+    <button id="btn2">Set html</button>
+    <button id="btn3">Get text</button>
+    <button id="btn4">Set text</button>
+    <button id="btn5">Get value</button>
+    <button id="btn6">Set value</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                //html():Lấy nội dung bên trong của selector
+                //Chú ý: Lấy cả phần tử html bên trong selector
+                //Cú pháp: $("selector").html()
+                alert($("p").html());
+            });
+            $("#btn2").click(function(){
+                //html(value): Đặt value thành nội dung của selector
+                //Cú pháp:$("selector").html(value)
+                $("p").html("<b>CNTT 18-09</b>");
+            });
+            $("#btn3").click(function(){
+                //text(): Chỉ lấy nội dung bên trong không lấy html
+                //Cú pháp: $("selector").text()
+                alert($("p").text);
+            });
+            $("#btn4").click(function(){
+                //Chỉ thay đổi nội dung
+                $("p").text("<b>CNTT 18-09</b>");
+            });
+            $("#btn5").click(function(){
+                //Lấy ra giá trị của thẻ input
+                alert($("input").val());
+            });
+            $("#btn6").click(function(){
+                //Đặt giá trị mới cho thẻ input
+                $("input").val("CNTT 18-09");
+            });
+        });
+
+    </script>
+</body>
+</html>
