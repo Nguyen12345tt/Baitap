@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "Student",
+            "projectName": "Baitap_11f893f6"
+        },
+        {
+            "type": "java",
             "name": "uocsocuasonguyenduong",
             "request": "launch",
             "mainClass": "uocsocuasonguyenduong",
