@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tư vấn tuyển sinh</title>
+    <style>
+        /* Cài đặt chung cho trang */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 0;
+            color: #333;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Container chính chứa toàn bộ nội dung */
+        .container {
+            max-width: 850px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            font-size: 2.2em;
+            color: #1c3d5a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Đoạn văn mô tả */
+        p.subtitle {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Biểu mẫu đăng ký */
+        .registration-form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        /* Lưới chứa các trường nhập liệu */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 30px; /* Khoảng cách giữa các hàng và cột */
+        }
+
+        /* Nhóm chứa label và input */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* CSS cho trường nhập liệu chiếm toàn bộ chiều rộng */
+        .form-group.full-width {
+            grid-column: 1 / -1; /* Trải dài từ cột 1 đến hết */
+        }
+
+        /* Nhãn của các trường nhập liệu */
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        /* CSS chung cho input và select */
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #f77f00;
+            box-shadow: 0 0 0 3px rgba(247, 127, 0, 0.2);
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        /* Tùy chỉnh mũi tên cho thẻ select */
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px top 50%;
+            padding-right: 40px;
+        }
+
+        /* Nút đăng ký */
+        button[type="submit"] {
+            width: 100%;
+            padding: 16px;
+            background-color: #f77f00; /* Màu cam */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #d66c00; /* Màu cam đậm hơn khi hover */
+        }
+
+        /* Điều chỉnh cho màn hình nhỏ (responsive) */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .registration-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ĐĂNG KÝ TƯ VẤN TUYỂN SINH NĂM 2025</h1>
+        <p class="subtitle">
+            Đại học Đại Nam tuyển sinh 36 chương trình đào tạo thuộc nhiều chuyên ngành khác nhau, bao gồm
+            Chăm sóc sức khỏe, Kỹ thuật và Công nghệ, Kinh tế và Kinh doanh, Khoa học Xã hội và Nhân văn.
+        </p>
+
+        <form class="registration-form" action="#" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên đầy đủ</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn(*)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Ngày sinh</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn(*)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email của bạn(*)" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="address">Địa chỉ</label>
+                    <input type="text" id="address" name="address" placeholder="Nhập địa chỉ của bạn(*)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="education-system">Hệ thống đào tạo</label>
+                    <select id="education-system" name="education_system">
+                        <option>Chương trình đại học</option>
+                        <option>Chương trình sau đại học</option>
+                        <option>Chương trình liên kết</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="field-of-interest">Lĩnh vực quan tâm</label>
+                    <select id="field-of-interest" name="field_of_interest">
+                        <option>Thuốc</option>
+                        <option>Kỹ thuật và Công nghệ</option>
+                        <option>Kinh tế và Kinh doanh</option>
+                        <option>Khoa học Xã hội và Nhân văn</option>
+                        <option>Chăm sóc sức khỏe</option>
+                        <option>Quản trị Nhà hàng - Khách sạn</option>
+                        <option>Ngành khác</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Đăng ký để nhận tư vấn</button>
+        </form>
+    </div>
+
+</body>
+</html>
